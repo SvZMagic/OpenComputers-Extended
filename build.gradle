@@ -1,7 +1,8 @@
 plugins {
+    id "org.jetbrains.kotlin.jvm" version "1.9.23"
     id 'fabric-loom'
     id 'maven-publish'
-    id "org.jetbrains.kotlin.jvm"
+
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -16,7 +17,7 @@ minecraft {
 
 
 repositories {
-    maven { url = "http://maven.fabricmc.net/" }
+    maven { url = "https://maven.fabricmc.net/" }
 }
 
 dependencies {
@@ -32,7 +33,7 @@ dependencies {
     include "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 
     // https://mvnrepository.com/artifact/org.graalvm.sdk/graal-sdk
-    compile group: 'org.graalvm.sdk', name: 'graal-sdk', version: '20.3.0'
+    implementation group: 'org.graalvm.sdk', name: 'graal-sdk', version: '20.3.0'
     implementation 'org.graalvm.truffle:truffle-tck:20.3.0'
     implementation 'org.graalvm.compiler:compiler:20.3.0'
 }
@@ -55,6 +56,11 @@ processResources {
 // see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
+
+}
+
+tasks.withType(Copy) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
@@ -65,9 +71,14 @@ task sourcesJar(type: Jar, dependsOn: classes) {
     from sourceSets.main.allSource
 }
 
+
+
 jar {
     from "LICENSE"
 }
+
+
+
 
 // configure the maven publication
 publishing {
