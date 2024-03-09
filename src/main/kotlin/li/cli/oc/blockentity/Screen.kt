@@ -2,7 +2,7 @@ package li.cli.oc.blockentity
 
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.block.entity.BlockEntityType
-import net.minecraft.nbt.CompoundTag
+import net.minecraft.nbt.NbtCompound
 import net.minecraft.block.BlockState
 import net.minecraft.util.Tickable
 import net.minecraft.util.math.BlockPos
@@ -177,7 +177,7 @@ class Screen(val tier: Int): TecBlockEntity(getEntityFromTier(tier)), Tickable {
             }
         }
     }
-    override fun toTag(tag: CompoundTag): CompoundTag {
+    override fun toTag(tag: NbtCompound): NbtCompound {
         super.toTag(tag)
         tag.putInt("width", width)
         tag.putInt("height", height)
@@ -187,7 +187,7 @@ class Screen(val tier: Int): TecBlockEntity(getEntityFromTier(tier)), Tickable {
         return tag
     }
 
-    override fun fromTag(state: BlockState?, tag: CompoundTag?) {
+    override fun fromTag(state: BlockState?, tag: NbtCompound?) {
         super.fromTag(state,tag)
 
         val oldOffsetX = offsetX

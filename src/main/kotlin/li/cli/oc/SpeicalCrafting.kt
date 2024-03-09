@@ -35,7 +35,7 @@ class SimpleCrafting(val grid: Array<Item>, val result: Item, id: String, val rs
         return false
     }
 
-    override fun getPreviewInputs(): DefaultedList<Ingredient> {
+    fun getPreviewInputs(): DefaultedList<Ingredient> { // WARNING! MAY BE BROKEN!
         val defaultedList = DefaultedList.of<Ingredient>()
         grid.forEachIndexed { index, item ->
             defaultedList.add(index, Ingredient.ofStacks(ItemStack(item)))
@@ -44,7 +44,7 @@ class SimpleCrafting(val grid: Array<Item>, val result: Item, id: String, val rs
 
     }
 
-    override fun getRecipeKindIcon(): ItemStack {
+    fun getRecipeKindIcon(): ItemStack { // WARNING! MAY BE BROKEN!
         return ItemStack(result)
     }
 
