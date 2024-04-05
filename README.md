@@ -10,6 +10,8 @@ implementation uses Lua 5.4 and is fully persistent. This means programs will co
 information, please [see the wiki][wiki]. Feel invited to visit the [community forums][forums] or drop by in
 the [IRC channel #oc on esper.net][irc].
 
+# Разработка OC:Extended отложена на неопределенный срок. Возможно я вернусь к октябрю, а может, вообще в январе 2025.
+
 A few useful links:
 
 * [Minecraft Forum Thread][mcf]
