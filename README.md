@@ -11,6 +11,7 @@ information, please [see the wiki][wiki]. Feel invited to visit the [community f
 the [IRC channel #oc on esper.net][irc].
 
 # Разработка OC:Extended отложена на неопределенный срок. Возможно я вернусь к октябрю, а может, вообще в январе 2025.
+# Если вы хотите связатся со мной по поводу этого проекта - мой дискорд вам в руки: arducat
 
 A few useful links:
 
